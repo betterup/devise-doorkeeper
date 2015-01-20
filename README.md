@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/betterup/devise-doorkeeper.svg)](https://travis-ci.org/betterup/devise-doorkeeper)
 # Devise::Doorkeeper
 > Integrates OAuth2 tokens from the Doorkeeper gem into Devise authentication strategies
 
