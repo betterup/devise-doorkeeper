@@ -14,6 +14,9 @@ RSpec.describe 'OAuth bearer token requests', type: :request do
       get request_path, params, headers
     end
     it { expect(response.status).to eq 200 }
+    it 'does not send Set-Cookie headers' do
+      expect(response.headers).to_not include 'Set-Cookie'
+    end
   end
   context 'with expired access token' do
     with :access_token, expires_in: 0

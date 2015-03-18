@@ -60,6 +60,16 @@ class CommentsController < ApplicationController
 end
 ```
 
+#### (optional) Disable session storage
+Most API's should not create sessions for each API request.
+This can be configured via the Devise `skip_session_storage` setting.
+
+```ruby
+# config/initializers/devise.rb
+config.skip_session_storage = [:http_auth] # this is the default devise config
+config.skip_session_storage << :doorkeeper # disable session storage for oauth requests
+```
+
 ## [ Contributing ](CONTRIBUTING.md)
 
 1. Fork it ( https://github.com/betterup/devise-doorkeeper/fork )
