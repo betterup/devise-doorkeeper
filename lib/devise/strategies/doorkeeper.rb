@@ -20,6 +20,22 @@ module Devise
         end
       end
 
+      # override base class implementation
+      # allow for Rails application to configure
+      # skipping session storage for doorkeeper requests
+      # see Devise skip_session_storage configuration
+      def authentication_type
+        :doorkeeper
+      end
+
+      # override base class implementation
+      # API requests should *not* reset the user's
+      # CSRF token which triggers rails to set the
+      # session_id key and send cookies to users
+      def clean_up_csrf?
+        false
+      end
+
       private
 
       def resource_from_token
