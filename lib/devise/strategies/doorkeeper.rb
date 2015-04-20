@@ -58,12 +58,3 @@ module Devise
 end
 Warden::Strategies.add(:doorkeeper, Devise::Strategies::Doorkeeper)
 Devise.add_module(:doorkeeper, strategy: true)
-
-
-# if ///
-#  error = OAuth::InvalidTokenResponse.from_access_token(doorkeeper_token)
-#   options = doorkeeper_unauthorized_render_options
-# else
-#   error = OAuth::ForbiddenTokenResponse.from_scopes(scopes)
-#   options = doorkeeper_forbidden_render_options
-# end
