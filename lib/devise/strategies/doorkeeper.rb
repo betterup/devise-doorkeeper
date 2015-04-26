@@ -6,6 +6,8 @@ require 'devise/strategies/authenticatable'
 module Devise
   module Strategies
     class Doorkeeper < ::Devise::Strategies::Authenticatable
+      WARDEN_INVALID_TOKEN_MESSAGE = :invalid_token
+
       def valid?
         credentials = ::Doorkeeper::OAuth::Token.from_request(request, *access_token_methods)
         credentials.present?
@@ -46,7 +48,7 @@ module Devise
       end
 
       def invalid_token
-        fail!(:invalid_token)
+        fail!(WARDEN_INVALID_TOKEN_MESSAGE)
         throw :warden
       end
 

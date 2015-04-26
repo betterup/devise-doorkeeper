@@ -26,12 +26,25 @@ gem 'devise-doorkeeper'
 
 #### Update doorkeeper config
 Update your `config/initializers/doorkeeper.rb` to call
-`Devise::Doorkeeper.configure(self)`.
+`Devise::Doorkeeper.configure_doorkeeper(self)`.
 
 ```ruby
 # config/initializers/doorkeeper.rb
 Doorkeeper.configure do
-  Devise::Doorkeeper.configure(self)
+  Devise::Doorkeeper.configure_doorkeeper(self)
+
+  # extra configuration goes below
+end
+```
+
+#### Update devise config
+Update your `config/initializers/devise.rb` to call
+`Devise::Doorkeeper.configure_devise`.
+
+```ruby
+# config/initializers/devise.rb
+Devise.setup do |config|
+  Devise::Doorkeeper.configure_devise(config)
 
   # extra configuration goes below
 end
