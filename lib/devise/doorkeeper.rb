@@ -3,7 +3,14 @@ require 'devise/strategies/doorkeeper'
 
 module Devise
   module Doorkeeper
-    def self.configure(base)
+    def self.configure_devise(config)
+      config.warden do |manager|
+        require 'devise/doorkeeper/doorkeeper_failure_app'
+        manager.failure_app = Devise::Doorkeeper::DoorkeeperFailureApp
+      end
+    end
+
+    def self.configure_doorkeeper(base)
       base.instance_eval do
         resource_owner_authenticator do
           current_user || warden.authenticate!(scope: :user)

@@ -1,5 +1,5 @@
 Doorkeeper.configure do
-  Devise::Doorkeeper.configure(self)
+  Devise::Doorkeeper.configure_doorkeeper(self)
 
   # Change the ORM that doorkeeper will use.
   # Currently supported options are :active_record, :mongoid2, :mongoid3,
@@ -99,7 +99,7 @@ Doorkeeper.configure do
   # end
 
   # WWW-Authenticate Realm (default "Doorkeeper").
-  # realm "Doorkeeper"
+  realm 'DeviseDoorkeeperApp'
 
   # Allow dynamic query parameters (disabled by default)
   # Some applications require dynamic query parameters on their request_uri
