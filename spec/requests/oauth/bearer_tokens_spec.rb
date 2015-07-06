@@ -11,11 +11,16 @@ RSpec.describe 'OAuth bearer token requests', type: :request do
     end
     let(:params) { {} }
     before do
+      @original_timestamp = User.find(access_token.resource_owner_id).last_sign_in_at
       get request_path, params, headers
     end
     it { expect(response.status).to eq 200 }
     it 'does not send Set-Cookie headers' do
       expect(response.headers).to_not include 'Set-Cookie'
+    end
+    it 'does not update the user last_signin_at timestamp' do
+      new_timestamp = User.find(access_token.resource_owner_id).last_sign_in_at
+      expect(new_timestamp).to eq @original_timestamp
     end
   end
   context 'with expired access token' do
