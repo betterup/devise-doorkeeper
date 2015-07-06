@@ -16,6 +16,7 @@ module Devise
       def authenticate!
         resource = resource_from_token
         if validate(resource)
+          request.env['devise.skip_trackable'] = true
           success!(resource)
         else
           invalid_token

@@ -32,4 +32,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'travis'
+
+  # configure gem version for continuous integration builds
+  if ENV['TRAVIS_JOB_NUMBER']
+    spec.version = "#{spec.version}.ci.#{ENV['TRAVIS_JOB_NUMBER']}"
+  end
 end
