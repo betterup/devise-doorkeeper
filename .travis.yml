@@ -1,1 +1,8 @@
 language: ruby
+deploy:
+  provider: rubygems
+  api_key:
+    secure: fZeFXgr6w8I4/eLDVtiUd4dMI0h3ZcORssPPQGsbIc4Fybd7jeBMUIkY8lY6U3R2efktqMbgecwEgwmmjMQerFKH3Xw/BSu9XShl3xWlS3BTyCiyezAyB3KApPVOoam8AeHj5YnPkVTHQRvRyPUAptFaPrQTx5y4APsonONJciI=
+  gem: devise-doorkeeper
+  on:
+    repo: betterup/devise-doorkeeper
