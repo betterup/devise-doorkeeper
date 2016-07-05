@@ -1,15 +1,15 @@
 require 'devise/doorkeeper/version'
 require 'devise/strategies/doorkeeper'
+require 'devise/doorkeeper/doorkeeper_failure_app'
 
 module Devise
   module Doorkeeper
+    # configure devise to support doorkeeper error responses
+    # DEPRECATED: this is no longer used now that DoorkeeperFailureApp is auto-injected into the FailureApp
     def self.configure_devise(config)
-      config.warden do |manager|
-        require 'devise/doorkeeper/doorkeeper_failure_app'
-        manager.failure_app = Devise::Doorkeeper::DoorkeeperFailureApp
-      end
     end
 
+    # configure doorkeeper to use devise authentication
     def self.configure_doorkeeper(base)
       base.instance_eval do
         resource_owner_authenticator do
