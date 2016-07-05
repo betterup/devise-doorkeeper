@@ -1,4 +1,3 @@
-require 'devise/failure_app'
 require 'devise/strategies/doorkeeper'
 
 module Devise
@@ -27,4 +26,3 @@ module Devise
     end
   end
 end
-Devise::FailureApp.prepend(Devise::Doorkeeper::DoorkeeperFailureApp)

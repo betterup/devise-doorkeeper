@@ -5,8 +5,8 @@ require 'devise/doorkeeper/doorkeeper_failure_app'
 module Devise
   module Doorkeeper
     # configure devise to support doorkeeper error responses
-    # DEPRECATED: this is no longer used now that DoorkeeperFailureApp is auto-injected into the FailureApp
     def self.configure_devise(config)
+      Devise::FailureApp.prepend(Devise::Doorkeeper::DoorkeeperFailureApp)
     end
 
     # configure doorkeeper to use devise authentication

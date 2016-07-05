@@ -36,6 +36,7 @@ RSpec.describe 'OAuth bearer token requests', type: :request do
     end
     it { expect(response.status).to eq 401 }
     it { expect(response.headers).to include('WWW-Authenticate' => 'Bearer realm="DeviseDoorkeeperApp", error="invalid_token", error_description="The access token is invalid"') }
+    it { expect(response.body).to eq '{"error":"invalid_token","error_description":"The access token is invalid","state":"unauthorized"}' }
   end
   context 'with revoked access token' do
     with :access_token, revoked_at: 1.year.ago
