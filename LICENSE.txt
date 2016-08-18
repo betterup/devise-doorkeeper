@@ -1,4 +1,4 @@
-Copyright (c) 2015 BetterUP, Inc.
+Copyright (c) 2015 BetterUp, Inc.
 
 MIT License
 

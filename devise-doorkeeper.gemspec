@@ -6,8 +6,8 @@ require 'devise/doorkeeper/version'
 Gem::Specification.new do |spec|
   spec.name          = 'devise-doorkeeper'
   spec.version       = Devise::Doorkeeper::VERSION
-  spec.authors       = ['Ryan Sonnek']
-  spec.email         = ['ryan@codecrate.com']
+  spec.authors       = ['BetterUp']
+  spec.email         = ['developers@betterup.co']
   spec.summary       = %q{ Integrate Doorkeeper OAuth2 tokens into Devise applications }
   spec.description   = %q{ Support authentication via OAuth2 tokens dispensed from the Doorkeeper authorization flow }
   spec.homepage      = ''
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'devise'
   spec.add_dependency 'doorkeeper'
 
-  spec.add_development_dependency 'bundler', '~> 1.7'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'factory_girl_rails'
   spec.add_development_dependency 'factory_girl_rspec'
@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'travis'
 
   # configure gem version for continuous integration builds
