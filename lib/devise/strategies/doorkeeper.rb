@@ -43,8 +43,7 @@ module Devise
 
       def resource_from_token
         token = ::Doorkeeper.authenticate(request)
-        scopes = ::Doorkeeper.configuration.default_scopes
-        invalid_token unless token && token.acceptable?(scopes)
+        invalid_token unless token && token.acceptable?([])
         mapping.to.find(token.resource_owner_id)
       end
 
