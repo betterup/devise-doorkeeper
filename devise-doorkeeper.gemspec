@@ -18,21 +18,21 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'rails'
-  spec.add_dependency 'devise'
-  spec.add_dependency 'doorkeeper'
+  spec.add_dependency 'rails', '~> 5.0.0'
+  spec.add_dependency 'devise', '~> 4.2.0'
+  spec.add_dependency 'doorkeeper', '~> 4.1.0'
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rspec-rails'
-  spec.add_development_dependency 'factory_girl_rails'
-  spec.add_development_dependency 'factory_girl_rspec'
-  spec.add_development_dependency 'faker'
-  spec.add_development_dependency 'json_spec'
-  spec.add_development_dependency 'sqlite3'
-  spec.add_development_dependency 'coveralls'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'travis'
+  spec.add_development_dependency 'bundler', '~> 1.12.5'
+  spec.add_development_dependency 'rspec-rails', '~> 3.5.1'
+  spec.add_development_dependency 'factory_girl_rails', '~> 4.7.0'
+  spec.add_development_dependency 'factory_girl_rspec', '~> 2.1.0'
+  spec.add_development_dependency 'faker', '~> 1.6.6'
+  spec.add_development_dependency 'json_spec', '~> 1.1.4'
+  spec.add_development_dependency 'sqlite3', '~> 1.3.11'
+  spec.add_development_dependency 'coveralls', '~> 0.8.15'
+  spec.add_development_dependency 'pry', '~> 0.10.4'
+  spec.add_development_dependency 'rake', '~> 11.2.2'
+  spec.add_development_dependency 'travis', '~> 1.8.2'
 
   # configure gem version for continuous integration builds
   if ENV['TRAVIS_JOB_NUMBER']
