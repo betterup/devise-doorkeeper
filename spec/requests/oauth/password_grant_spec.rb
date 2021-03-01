@@ -45,7 +45,7 @@ RSpec.describe 'oauth/tokens password grant flow', type: :request do
     before do
       post '/oauth/token', params, headers
     end
-    it { expect(response.status).to eq 401 }
+    it { expect(response.status).to eq 400 }
   end
   context 'with invalid username' do
     with :user
@@ -63,6 +63,6 @@ RSpec.describe 'oauth/tokens password grant flow', type: :request do
     before do
       post '/oauth/token', params, headers
     end
-    it { expect(response.status).to eq 401 }
+    it { expect(response.status).to eq 400 }
   end
 end
