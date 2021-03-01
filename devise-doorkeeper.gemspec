@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails', '~> 4.0.2'
   spec.add_development_dependency 'factory_girl_rails', '~> 4.7.0'
   spec.add_development_dependency 'factory_girl_rspec', '~> 2.1.0'
-  spec.add_development_dependency 'faker', '~> 1.6.6'
+  spec.add_development_dependency 'faker', '~> 2.16.0'
   spec.add_development_dependency 'json_spec', '~> 1.1.4'
   spec.add_development_dependency 'sqlite3', '~> 1.3.11'
   spec.add_development_dependency 'coveralls', '~> 0.8.15'
