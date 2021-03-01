@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.17.3'
   spec.add_development_dependency 'rspec-rails', '~> 4.0.2'
   spec.add_development_dependency 'factory_girl_rails', '~> 4.9.0'
-  spec.add_development_dependency 'factory_girl_rspec', '~> 2.1.0'
+  spec.add_development_dependency 'factory_girl_rspec', '~> 3.0.0'
   spec.add_development_dependency 'faker', '~> 2.16.0'
   spec.add_development_dependency 'json_spec', '~> 1.1.4'
   spec.add_development_dependency 'sqlite3', '~> 1.3.11'
