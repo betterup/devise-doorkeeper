@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'rails', '~> 5.0.0'
-  spec.add_dependency 'devise', '~> 4.2.0'
+  spec.add_dependency 'devise', '~> 4.7.3'
   spec.add_dependency 'doorkeeper', '~> 4.1.0'
 
   spec.add_development_dependency 'bundler', '~> 1.17.3'
