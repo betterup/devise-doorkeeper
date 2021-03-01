@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'factory_girl_rspec', '~> 2.1.0'
   spec.add_development_dependency 'faker', '~> 1.6.6'
   spec.add_development_dependency 'json_spec', '~> 1.1.4'
-  spec.add_development_dependency 'sqlite3', '~> 1.3.11'
+  spec.add_development_dependency 'sqlite3', '~> 1.4.2'
   spec.add_development_dependency 'coveralls', '~> 0.8.15'
   spec.add_development_dependency 'pry', '~> 0.10.4'
   spec.add_development_dependency 'rake', '~> 13.0.3'
