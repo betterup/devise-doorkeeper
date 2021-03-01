@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rails', '~> 5.0.0'
   spec.add_dependency 'devise', '~> 4.7.3'
-  spec.add_dependency 'doorkeeper', '~> 4.1'
+  spec.add_dependency 'doorkeeper', '~> 5.5'
 
   spec.add_development_dependency 'bundler', '~> 1.17.3'
   spec.add_development_dependency 'rspec-rails', '~> 3.5.1'
