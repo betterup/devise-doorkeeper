@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'coveralls', '~> 0.8.15'
   spec.add_development_dependency 'pry', '~> 0.10.4'
   spec.add_development_dependency 'rake', '~> 13.0.3'
-  spec.add_development_dependency 'travis', '~> 1.8.2'
+  spec.add_development_dependency 'travis', '~> 1.10.0'
 
   # configure gem version for continuous integration builds
   if ENV['TRAVIS_JOB_NUMBER']
