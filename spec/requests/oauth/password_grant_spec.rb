@@ -17,7 +17,7 @@ RSpec.describe 'oauth/tokens password grant flow', type: :request do
     let(:expected_response) do
       {
         access_token: @new_token.token,
-        token_type: 'bearer',
+        token_type: 'Bearer',
         expires_in: 'ignored',
         created_at: 'ignored'
       }.to_json
