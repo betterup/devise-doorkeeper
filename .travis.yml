@@ -1,4 +1,6 @@
 language: ruby
+before_install:
+  - gem install bundler
 deploy:
   provider: rubygems
   api_key:
