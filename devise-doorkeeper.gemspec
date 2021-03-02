@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'rails', '~> 5.0.0'
-  spec.add_dependency 'devise', '~> 4.7'
-  spec.add_dependency 'doorkeeper', '~> 5.5'
+  spec.add_dependency 'rails'
+  spec.add_dependency 'devise'
+  spec.add_dependency 'doorkeeper'
 
   spec.add_development_dependency 'bundler', '~> 2.2'
   spec.add_development_dependency 'rspec-rails', '~> 4.0'

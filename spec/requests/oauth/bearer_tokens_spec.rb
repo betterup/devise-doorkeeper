@@ -62,7 +62,7 @@ RSpec.describe 'OAuth bearer token requests', type: :request do
     end
     let(:params) { {} }
     before do
-      get request_path, params, headers
+      get request_path, params: params, headers: headers
     end
     it { expect(response.status).to eq 401 }
   end
@@ -75,7 +75,7 @@ RSpec.describe 'OAuth bearer token requests', type: :request do
     end
     let(:params) { {} }
     before do
-      get request_path, params, headers
+      get request_path, params: params, headers: headers
     end
     it { expect(response.status).to eq 401 }
   end
