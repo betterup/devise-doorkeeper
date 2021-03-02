@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'devise', '~> 4.7'
   spec.add_dependency 'doorkeeper', '~> 5.5'
 
-  spec.add_development_dependency 'bundler', '~> 1.17.3'
+  spec.add_development_dependency 'bundler', '~> 2.2.11'
   spec.add_development_dependency 'rspec-rails', '~> 4.0'
   spec.add_development_dependency 'factory_bot_rails', '~> 4.9'
   spec.add_development_dependency 'factory_girl_rspec', '~> 3.0'
