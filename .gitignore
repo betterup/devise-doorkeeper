@@ -15,3 +15,6 @@ mkmf.log
 *.sqlite3
 *.log
 spec/dummy/tmp
+
+# Mac finder artifacts
+.DS_Store
