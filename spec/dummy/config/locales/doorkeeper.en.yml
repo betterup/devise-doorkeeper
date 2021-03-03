@@ -130,6 +130,8 @@ en:
           expired: "The access token expired"
           unknown: "The access token is invalid"
 
+        unconfirmed_resource: 'The resource owner account is unconfirmed.'
+
     flash:
       applications:
         create:
