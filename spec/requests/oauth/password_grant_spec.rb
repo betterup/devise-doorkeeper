@@ -23,7 +23,7 @@ RSpec.describe 'oauth/tokens password grant flow', type: :request do
       }.to_json
     end
     before do
-      post '/oauth/token', params, headers
+      post '/oauth/token', params: params, headers: headers
       @new_token = Doorkeeper::AccessToken.last
     end
     it { expect(response.status).to eq 200 }
@@ -43,7 +43,7 @@ RSpec.describe 'oauth/tokens password grant flow', type: :request do
     end
     let(:headers) { {} }
     before do
-      post '/oauth/token', params, headers
+      post '/oauth/token', params: params, headers: headers
     end
     it { expect(response.status).to eq 400 }
   end
@@ -61,7 +61,7 @@ RSpec.describe 'oauth/tokens password grant flow', type: :request do
     end
     let(:headers) { {} }
     before do
-      post '/oauth/token', params, headers
+      post '/oauth/token', params: params, headers: headers
     end
     it { expect(response.status).to eq 400 }
   end

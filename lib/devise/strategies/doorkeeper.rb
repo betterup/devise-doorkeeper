@@ -7,6 +7,7 @@ module Devise
   module Strategies
     class Doorkeeper < ::Devise::Strategies::Authenticatable
       WARDEN_INVALID_TOKEN_MESSAGE = :invalid_token
+      WARDEN_UNCONFIRMED_RESOURCE_MESSAGE = :unconfirmed_resource
 
       def valid?
         credentials = ::Doorkeeper::OAuth::Token.from_request(request, *access_token_methods)
@@ -17,7 +18,11 @@ module Devise
         resource = resource_from_token
         if validate(resource)
           request.env['devise.skip_trackable'] = true
-          success!(resource)
+          if resource.active_for_authentication?
+            success!(resource)
+          else
+            unconfirmed_resource
+          end
         else
           invalid_token
         end
@@ -46,6 +51,11 @@ module Devise
         scopes = ::Doorkeeper.configuration.default_scopes
         invalid_token unless token && token.acceptable?(scopes)
         mapping.to.find(token.resource_owner_id)
+      end
+
+      def unconfirmed_resource
+        fail!(WARDEN_UNCONFIRMED_RESOURCE_MESSAGE)
+        throw :warden
       end
 
       def invalid_token
