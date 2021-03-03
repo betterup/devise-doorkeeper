@@ -11,6 +11,10 @@ module Devise
         :locked
       end
 
+      def description
+        @description ||= I18n.translate('doorkeeper.errors.messages.unconfirmed_resource')
+      end
+
       def exception_class
         ::Doorkeeper::Errors::DoorkeeperError
       end

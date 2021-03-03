@@ -36,6 +36,13 @@ RSpec.describe 'OAuth bearer token requests', type: :request do
         get request_path, headers: headers
       end
       it { expect(response.status).to eq 423 }
+      it do
+        expect(JSON.parse(response.body)).to include(
+          'error' => 'unconfirmed_resource',
+          'error_description' => 'The resource owner account is unconfirmed.',
+          'state' => 'locked'
+        )
+      end
     end
   end
   context 'with expired access token' do
