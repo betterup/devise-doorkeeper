@@ -48,9 +48,9 @@ module Devise
 
       def resource_from_token
         token = ::Doorkeeper.authenticate(request)
-        scopes = ::Doorkeeper.configuration.default_scopes
+        scopes = ::Doorkeeper.configuration.default_scopes + ::Doorkeeper.configuration.optional_scopes
         invalid_token unless token && token.acceptable?(scopes)
-        mapping.to.find(token.resource_owner_id)
+        mapping.to.find(token.resource_owner_id || token.application.owner_id)
       end
 
       def unconfirmed_resource
